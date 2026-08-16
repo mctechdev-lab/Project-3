@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #0A0A0C;
+}
+
+/* ambient background glow, used once behind the whole page */
+.ambient-glow {
+  background:
+    radial-gradient(650px 420px at 88% 4%, rgba(240, 185, 11, 0.08), transparent 60%),
+    radial-gradient(520px 360px at 6% 40%, rgba(22, 199, 132, 0.05), transparent 60%);
+}
+
+/* thin scrollbar inside the phone preview so it still feels native */
+.phone-scroll::-webkit-scrollbar {
+  width: 3px;
+}
+.phone-scroll::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 4px;
+}
+
+@keyframes ticker-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.animate-ticker {
+  animation: ticker-scroll 28s linear infinite;
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-up {
+  animation: fade-up 0.35s ease both;
+}
